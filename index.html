@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nataly</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <style>
+        * {box-sizing: border-box;}
+        body {font-family: Arial, sans-serif;}
+        .carousel {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 2px; /* Alterado para 2px de margem superior */
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            transform: translateY(-50%);
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .video-player {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .video-player iframe {
+            border-radius: 10px;
+        }
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 5px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: #25d366;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .contact-button i {
+            margin-right: 10px;
+        }
+        .contact-button:hover {
+            background-color: #20b351;
+        }
+    </style>
+</head>
+<body>
+
+<div class="carousel">
+    <div class="slides">
+        <img src="img/nataly1.jpeg" alt="Foto 1">
+        <img src="img/nataly2.jpeg" alt="Foto 2">
+        <img src="img/nataly3.jpeg" alt="Foto 3">
+        <img src="img/nataly4.jpeg" alt="Foto 4">
+    </div>
+    <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+    <a class="next" onclick="moveSlide(1)">&#10095;</a>
+</div>
+
+<div class="video-player">
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/T7iiwsT5hWg?si=YyYu16p_b5mDiA-Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<div class="caixa">
+    <h1>Querida Nataly,</h1>
+
+    <p>
+        Eu admiro muito você e tudo o que você representa. Sua personalidade mesmo te conhecendo bem pouco rs, seu charme, e sua maneira de ver o mundo me encantam. Gostaria muito de conhecer você melhor, de saber mais sobre suas paixões, seus sonhos, e compartilhar momentos que sejam significativos para ambos. Espero que possamos nos aproximar mais e construir uma conexão especial.
+    </p>
+    <p>Atenciosamente,</p>
+    <p><strong>Alisson</strong></p>
+
+    <div class="col-md-6">
+        <div class="contact-container">
+            <a target="_blank"
+               href="https://api.whatsapp.com/send?phone=75999623787&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20veterinaria%20para%20o%20meu%20Pet!"
+               class="contact-button" type="button"><i class="fab fa-whatsapp"></i>Entrar em contato</a>
+        </div>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </div>
+</div>
+
+<script>
+    function abrir() {
+        document.querySelector("form").style.opacity = 1;
+        document.querySelector("div").style.opacity = 0.3;
+    }
+
+    function fechar() {
+        document.querySelector("form").style.opacity = 0;
+        document.querySelector("div").style.opacity = 1;
+    }
+</script>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slides img').length;
+
+    function showSlide(index) {
+        if (index >= totalSlides) {
+            slideIndex = 0;
+        } else if (index < 0) {
+            slideIndex = totalSlides - 1;
+        } else {
+            slideIndex = index;
+        }
+        slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+    }
+
+    function moveSlide(step) {
+        showSlide(slideIndex + step);
+    }
+
+    showSlide(slideIndex);
+</script>
+
+</body>
+</html>
