@@ -94,7 +94,10 @@
         }
 
         /* Responsive Styles */
-        @media (max-width: 768px) {
+        @media (max-width: 1200px) {
+            .carousel {
+                max-width: 80%;
+            }
             .prev, .next {
                 font-size: 16px;
                 padding: 8px;
@@ -105,7 +108,10 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
+            .carousel {
+                max-width: 100%;
+            }
             .prev, .next {
                 font-size: 14px;
                 padding: 6px;
@@ -113,6 +119,26 @@
             .contact-button {
                 font-size: 14px;
                 padding: 6px 12px;
+            }
+            .caixa {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel {
+                max-width: 100%;
+            }
+            .prev, .next {
+                font-size: 12px;
+                padding: 4px;
+            }
+            .contact-button {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+            .caixa {
+                padding: 5px;
             }
         }
     </style>
@@ -146,7 +172,7 @@
     <div class="col-md-6">
         <div class="contact-container">
             <a target="_blank"
-               href="https://api.whatsapp.com/send?phone=75999623787&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20veterinaria%20para%20o%20meu%20Pet!"
+               href="https://api.whatsapp.com/send?phone=75999623787&text=ol%C3%A1%2C%20Alisson%20vamos%20sair%20juntos%2C%20estreitar%20nossa%20amizade%20e%20ver%20no%20que%20vai%20dar%3F"
                class="contact-button" type="button"><i class="fab fa-whatsapp"></i>Entrar em contato</a>
         </div>
         
