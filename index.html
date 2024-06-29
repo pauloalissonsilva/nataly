@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrossel de Fotos</title>
+    <title>Nataly</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
     <style>
         * {box-sizing: border-box;}
         body {font-family: Arial, sans-serif; margin: 0; padding: 0;}
@@ -23,7 +25,7 @@
         .slides img {
             width: 100%;
             border-radius: 10px;
-            margin-top: 2px;
+            margin-top: 2px; /* Alterado para 2px de margem superior */
         }
         .prev, .next {
             position: absolute;
@@ -52,20 +54,65 @@
         }
         .video-player iframe {
             border-radius: 10px;
-            max-width: 100%;
+            width: 100%;
             height: auto;
+            max-width: 560px;
         }
-        @media (max-width: 600px) {
-            .carousel {
-                max-width: 100%;
+        .caixa {
+            padding: 20px;
+            text-align: center;
+        }
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 5px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: #25d366;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .contact-button i {
+            margin-right: 10px;
+        }
+        .contact-button:hover {
+            background-color: #20b351;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .prev, .next {
+                font-size: 16px;
+                padding: 8px;
             }
+            .contact-button {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
             .prev, .next {
                 font-size: 14px;
-                padding: 5px;
+                padding: 6px;
             }
-            .video-player iframe {
-                width: 100%;
-                height: auto;
+            .contact-button {
+                font-size: 14px;
+                padding: 6px 12px;
             }
         }
     </style>
@@ -84,21 +131,40 @@
 </div>
 
 <div class="video-player">
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/T7iiwsT5hWg?si=YyYu16p_b5mDiA-Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/JiuYnJYKLus?si=dR3C97cevZUhvhhW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 <div class="caixa">
     <h1>Querida Nataly,</h1>
+
     <p>
         Eu admiro muito você e tudo o que você representa. Sua personalidade mesmo te conhecendo bem pouco rs, seu charme, e sua maneira de ver o mundo me encantam. Gostaria muito de conhecer você melhor, de saber mais sobre suas paixões, seus sonhos, e compartilhar momentos que sejam significativos para ambos. Espero que possamos nos aproximar mais e construir uma conexão especial.
     </p>
     <p>Atenciosamente,</p>
     <p><strong>Alisson</strong></p>
-    <div class="contact-container">
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=75999623787&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20veterinaria%20para%20o%20meu%20Pet!" class="contact-button" type="button"><i class="fab fa-whatsapp"></i> Entrar em contato</a>
+
+    <div class="col-md-6">
+        <div class="contact-container">
+            <a target="_blank"
+               href="https://api.whatsapp.com/send?phone=75999623787&text=Ol%C3%A1%20gostaria%20de%20agendar%20uma%20consulta%20veterinaria%20para%20o%20meu%20Pet!"
+               class="contact-button" type="button"><i class="fab fa-whatsapp"></i>Entrar em contato</a>
+        </div>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </div>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </div>
+
+<script>
+    function abrir() {
+        document.querySelector("form").style.opacity = 1;
+        document.querySelector("div").style.opacity = 0.3;
+    }
+
+    function fechar() {
+        document.querySelector("form").style.opacity = 0;
+        document.querySelector("div").style.opacity = 1;
+    }
+</script>
 
 <script>
     let slideIndex = 0;
